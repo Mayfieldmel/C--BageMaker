@@ -2,6 +2,7 @@
 // Import correct packages
 using System;
 using System.IO;
+using SkiaSharp;
 using System.Collections.Generic;
 
 namespace CatWorx.BadgeMaker
