@@ -57,7 +57,10 @@ namespace CatWorx.BadgeMaker
                     SKImage photo = SKImage.FromEncodedData(await client.GetStreamAsync(employees[i].GetPhotoUrl()));
                     SKImage background = SKImage.FromEncodedData(File.OpenRead("badge.png"));
                     // SKData data = background.Encode();
-                    // data.SaveTo(File.OpenWrite("data/employeeBadge.png"))
+                    // data.SaveTo(File.OpenWrite("data/employeeBadge.png"));
+                    SKBitmap badge = new SKBitmap(BADGE_WIDTH, BADGE_HEIGHT);
+                    SKCanvas canvas = SKCanvas(badge);
+                    canvas.DrawImage(background, new SKRect(0, 0, BADGE_WIDTH, BADGE_HEIGHT));
                 }
             }
         }
